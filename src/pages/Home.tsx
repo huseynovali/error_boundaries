@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import SideBar from "../components/SideBar";
 import MainContent from "../components/MainContent";
-import ErrorBoundary from "../config/ErrorBoundaries";
-
+import ErrorBoundary1 from "../config/ErrorBoundaries";
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from "../config/ErrorBoundariesFunc";
 function Home() {
   const Div = styled.div`
     display: grid;
@@ -14,10 +15,12 @@ function Home() {
   `;
   return (
     <Div>
+     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <SideBar />
-      <ErrorBoundary>
-        <MainContent />
       </ErrorBoundary>
+      <ErrorBoundary1>
+        <MainContent />
+      </ErrorBoundary1>
     </Div>
   );
 }

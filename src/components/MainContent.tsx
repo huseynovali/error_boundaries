@@ -6,8 +6,7 @@ function MainContent() {
     background-color: #f8f;
   `;
 
-  throw new Error("MainContent Error");
-
+  
   return <Div>MainContent</Div>;
 }
 
